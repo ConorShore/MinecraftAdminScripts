@@ -1,0 +1,12 @@
+[Unit]
+Description=Stops minecraft servers on shutdown
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+User=root
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/home/minecraft0/MinecraftAdminScripts/stopmcservers.sh
+
+[Install]
+WantedBy=multi-user.target
