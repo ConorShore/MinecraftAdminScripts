@@ -3,7 +3,7 @@ source commonfuncs.sh
 
 sudo rm /etc/systemd/system/stopmcserver.service
 
-sudo printf "[Unit]\n
+sudo -c printf "[Unit]\n
 Description=Stops minecraft servers on shutdown\n\
 Before=shutdown.target reboot.target halt.target\n\
 \n\
@@ -12,8 +12,8 @@ User=root\n\
 Type=oneshot\n\
 RemainAfterExit=true\n\
 ExecStop=" > /etc/systemd/system/stopmcserver.service
-sudo printf "$scriptsdir" >> /etc/systemd/system/stopmcserver.service
-sudo printf "/stopmcservers.sh\n\
+sudo -c printf "$scriptsdir" >> /etc/systemd/system/stopmcserver.service
+sudo -c printf "/stopmcservers.sh\n\
 \n\
 [Install]\n\
 WantedBy=multi-user.target\n\
