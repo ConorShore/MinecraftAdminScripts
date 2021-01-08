@@ -11,7 +11,9 @@ Before=shutdown.target reboot.target halt.target\n\
 User=root\n\
 Type=oneshot\n\
 RemainAfterExit=true\n\
-ExecStop=" "$scripts" "/stopmcservers.sh\n\
+ExecStop="
+printf "$scripts"
+printf "/stopmcservers.sh\n\
 \n\
 [Install]\n\
 WantedBy=multi-user.target\n\
