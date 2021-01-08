@@ -1,30 +1,21 @@
 #!/bin/bash
 
-function logtime {
-
-	daten=$(date +'%m/%d/%Y')
-	timen=$(date +"%T")
-	echo -n $daten >> /home/minecraft0/MinecraftAdminScripts/log
-	echo -n " " >> /home/minecraft0/MinecraftAdminScripts/log
-	echo -n $timen >> /home/minecraft0/MinecraftAdminScripts/log
-	echo -n " " >> /home/minecraft0/MinecraftAdminScripts/log
-
-}
+source commonfuncs.sh
 
 sudo screen -list | grep -v "screen"  | cut -d$'\t' -f 2 | cut -d"." -f 1 | xargs -Ihere sh -c "sudo screen -S here -p 0 -X stuff 'stop^M'"
 
-logtime
+logtimedate
 
 echo "Minecraft Servers Shutting Down" >> /home/minecraft0/MinecraftAdminScripts/log
 
 while pids=$(pidof java)
 do
-	logtime
+	logtimedate
 	echo "Waiting..." >> /home/minecraft0/MinecraftAdminScripts/log	
 	sleep 1
 done
 
-logtime
+logtimedate
 
 echo "Servers Stopped" >> /home/minecraft0/MinecraftAdminScripts/log
 
