@@ -1,9 +1,8 @@
 #!/bin/bash
-source commonfuncs.sh
+source /home/minecraft0/MinecraftAdminScripts/includes.conf
+sudo rm /etc/systemd/system/stopmcservers.service
 
-sudo rm /etc/systemd/system/stopmcserver.service
-
-sudo -c printf "[Unit]\n
+sudo printf "[Unit]\n
 Description=Stops minecraft servers on shutdown\n\
 Before=shutdown.target reboot.target halt.target\n\
 \n\
@@ -12,8 +11,8 @@ User=root\n\
 Type=oneshot\n\
 RemainAfterExit=true\n\
 ExecStop=" > /etc/systemd/system/stopmcserver.service
-sudo -c printf "$scriptsdir" >> /etc/systemd/system/stopmcserver.service
-sudo -c printf "/stopmcservers.sh\n\
+sudo printf "$scriptsdir" >> /etc/systemd/system/stopmcserver.service
+sudo printf "/stopmcservers.sh\n\
 \n\
 [Install]\n\
 WantedBy=multi-user.target\n\

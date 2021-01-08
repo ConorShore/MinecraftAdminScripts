@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source commonfuncs.sh
+source /home/minecraft0/MinecraftAdminScripts/includes.conf
 rm $logdir
 
 echo " " > $logdir
