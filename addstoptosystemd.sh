@@ -11,10 +11,10 @@ Before=shutdown.target reboot.target halt.target\n\
 User=root\n\
 Type=oneshot\n\
 RemainAfterExit=true\n\
-ExecStop="
-printf "$scriptsdir"
+ExecStop=" > test
+printf "$scriptsdir" >> test
 printf "/stopmcservers.sh\n\
 \n\
 [Install]\n\
 WantedBy=multi-user.target\n\
-"
+" >> test
