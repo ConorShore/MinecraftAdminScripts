@@ -2,6 +2,8 @@
 source /home/minecraft0/MinecraftAdminScripts/includes.conf
 sudo rm /etc/systemd/system/MinecraftAdminScripts.service
 
+echo "Installing systemd service called MinecraftAdminScripts.service" >> $logdir
+
 sudo printf "[Unit]\n
 Description=Minecraft server operations\n\
 Before=shutdown.target reboot.target halt.target\n\
