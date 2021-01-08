@@ -6,16 +6,16 @@ sudo screen -list | grep -v "screen"  | cut -d$'\t' -f 2 | cut -d"." -f 1 | xarg
 
 logdatetime
 
-echo "Minecraft Servers Shutting Down" >> /home/minecraft0/MinecraftAdminScripts/log
+echo "Minecraft Servers Shutting Down" >> $(logdir)
 
 while pids=$(pidof java)
 do
 	logdatetime
-	echo "Waiting..." >> /home/minecraft0/MinecraftAdminScripts/log	
+	echo "Waiting..." >> $(logdir)	
 	sleep 1
 done
 
 logdatetime
 
-echo "Servers Stopped" >> /home/minecraft0/MinecraftAdminScripts/log
+echo "Servers Stopped" >> $(logdir)
 
