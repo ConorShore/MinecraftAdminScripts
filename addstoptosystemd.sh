@@ -10,10 +10,10 @@ Before=shutdown.target reboot.target halt.target\n\
 User=root\n\
 Type=oneshot\n\
 RemainAfterExit=true\n\
-ExecStop=" > /etc/systemd/system/MinecraftAdminScripts.servic
+ExecStop=" > /etc/systemd/system/MinecraftAdminScripts.service
 sudo printf "$scriptsdir" >> /etc/systemd/system/MinecraftAdminScripts.service
 sudo printf "/stopmcservers.sh\n\
-ExecStart=" >> /etc/systemd/system/MinecraftAdminScripts.servic
+ExecStart=" >> /etc/systemd/system/MinecraftAdminScripts.service
 sudo printf "$scriptsdir" >> /etc/systemd/system/MinecraftAdminScripts.service
 sudo printf "/startmcservers.sh\n\
 \n\
