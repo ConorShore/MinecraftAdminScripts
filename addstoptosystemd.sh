@@ -5,7 +5,7 @@ servicepath="/etc/systemd/system/stopmcserver.service"
 
 sudo rm $servicepath
 
-printf "[Unit]\n
+sudo printf "[Unit]\n
 Description=Stops minecraft servers on shutdown\n\
 Before=shutdown.target reboot.target halt.target\n\
 \n\
@@ -14,8 +14,8 @@ User=root\n\
 Type=oneshot\n\
 RemainAfterExit=true\n\
 ExecStop=" > $servicepath
-printf "$scriptsdir" >> $servicepath
-printf "/stopmcservers.sh\n\
+sudo printf "$scriptsdir" >> $servicepath
+sudo printf "/stopmcservers.sh\n\
 \n\
 [Install]\n\
 WantedBy=multi-user.target\n\
