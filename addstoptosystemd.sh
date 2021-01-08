@@ -2,6 +2,7 @@
 source /home/minecraft0/MinecraftAdminScripts/includes.conf
 sudo rm /etc/systemd/system/MinecraftAdminScripts.service
 
+logdatetime
 echo "Installing systemd service called MinecraftAdminScripts.service" >> $logdir
 
 sudo printf "[Unit]\n
