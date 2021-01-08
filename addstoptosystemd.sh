@@ -2,8 +2,7 @@
 source commonfuncs.sh
 
 
-printf "\
-[Unit]\n
+printf "[Unit]\n
 Description=Stops minecraft servers on shutdown\n\
 Before=shutdown.target reboot.target halt.target\n\
 \n\
