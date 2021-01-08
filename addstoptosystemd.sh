@@ -12,7 +12,7 @@ User=root\n\
 Type=oneshot\n\
 RemainAfterExit=true\n\
 ExecStop="
-printf "$scripts"
+printf "$scriptsdir"
 printf "/stopmcservers.sh\n\
 \n\
 [Install]\n\
